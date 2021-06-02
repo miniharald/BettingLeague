@@ -4,7 +4,7 @@ async function getBy(filter = {}) {
   return db.query({
     sql: `
     SELECT *
-    FROM users
+    FROM tbl_tb_users
     WHERE 1 = 1
     ${filter.id ? "AND id = :id" : ""}
     ${filter.mail ? "AND mail = :mail" : ""}
