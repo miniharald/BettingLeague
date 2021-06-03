@@ -4,6 +4,7 @@ const controllers = require("./controllers");
 
 const app = express();
 
+app.use(require('cors')({ origin: process.env.SITE }))
 app.use(express.json());
 app.use(controllers());
 
