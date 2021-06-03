@@ -1,9 +1,9 @@
 <template>
   <div v-if="state.thereIsGames">
     <div class="gameRow" v-for="(game, index) in state.games" :key="index">
-      <img :src="`/img/teams/${game.home_id}.png`" />
-       vs. 
-       <img :src="`/img/teams/${game.away_id}.png`" />
+      <img :src="`/img/teams/${game.home_id}.png`" /> {{game.home_name}}
+       - 
+       <img :src="`/img/teams/${game.away_id}.png`" /> {{game.away_name}}
        <InputText /> - <InputText />
     </div>
   </div>
