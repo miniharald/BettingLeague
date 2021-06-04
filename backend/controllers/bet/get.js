@@ -5,6 +5,6 @@ module.exports = router;
 
 router.get("/league/:leagueId/user/:userId", async (req, res) => {
   res.json({
-      bets: await bet.getAllByLeagueAndUser({leagueId: req.params.leagueId, userId: req.params.userId})
+      bets: await bet.getAllBy({leagueId: req.params.leagueId, userId: req.params.userId})
   });
 });
