@@ -1,9 +1,11 @@
 const router = require("express").Router();
 
 router.use("/api", [
-    require("./login"),
+    require("./bet"),
+    require("./comp"),
     require("./game"),
-    require("./team")
+    require("./team"),
+    require("./login")
 ])
 
 module.exports = () => {
