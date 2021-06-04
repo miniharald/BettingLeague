@@ -1,6 +1,6 @@
 const db = require("../db")
 
-async function getTeamById(filter = {}) {
+async function getById(filter = {}) {
   return db.query({
     sql: `
     SELECT *
@@ -16,5 +16,5 @@ async function getTeamById(filter = {}) {
 }
 
 module.exports = {
-  getTeamById
+  getById
 }
