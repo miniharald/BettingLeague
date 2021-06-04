@@ -16,6 +16,28 @@ async function getAllBy(filter = {}) {
   });
 }
 
+async function insert(bet) {
+  return db.query({
+    sql: `
+    INSERT INTO tbl_tb_bets (
+      league_id,
+      user_id,
+      game_id,
+      home_result,
+      away_result
+    ) VALUES (
+      :leagueId,
+      :userId,
+      :gameId,
+      :homeResult,
+      :awayResult
+    )
+    `,
+    values: { ...bet }
+  });
+}
+
 module.exports = {
-    getAllBy,
+  insert,
+  getAllBy
 }

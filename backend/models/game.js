@@ -6,6 +6,7 @@ async function getAllByCompetition(filter = {}) {
     SELECT *
     FROM tbl_tb_comp_games_view
     WHERE comp_id = :compId
+    ORDER BY start ASC
     `,
     values: {
       ...filter
