@@ -15,6 +15,7 @@
         <InputText type="number" v-model="game.away_result" />
       </div>
     </div>
+    <Button @click="test()">Tippa</Button>
   </div>
 </template>
 
@@ -41,7 +42,13 @@ export default {
       state.thereIsGames = true;
     })
 
-    return { state, moment }
+    function test() {
+      state.games.forEach(game => {
+        console.log(game);
+      })
+    }
+
+    return { state, moment, test }
   }
 }
 </script>
@@ -78,5 +85,11 @@ export default {
   }
   .p-inputtext {
     width: 50px;
+  }
+
+  .p-button {
+    background: $bg-secondary !important;
+    border: $border !important;
+    margin: $margin-primary !important;
   }
 </style>
