@@ -14,15 +14,20 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
 @import url('https://fonts.googleapis.com/css2?family=Odibee+Sans&family=Righteous&family=Teko:wght@500&display=swap');
+@import "./style/_variables";
 
+body {
+  background-color: $bg-primary;
+  width: 100%;
+  margin: 0;
+}
 #app {
-  font-family: 'Odibee Sans', cursive;
+  font-family: $font-primary;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  color: $text-primary;
 }
 </style>
