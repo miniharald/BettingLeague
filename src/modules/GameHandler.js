@@ -8,7 +8,7 @@ export default function GameHandler() {
     async function getGamesByCompetition(compId) {
       let result;
       try {
-        result = await externalFetch(`http://192.168.1.2:8090/api/comp/${compId}`);
+        result = await externalFetch(`http://192.168.1.2:8090/api/games/comp/${compId}`);
         
         games.value = result.games;
       } catch (error) {

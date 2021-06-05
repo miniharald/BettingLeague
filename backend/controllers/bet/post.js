@@ -3,7 +3,7 @@ const { bet } = require("../../models");
 
 module.exports = router;
 
-router.post("/bets/add", async (req, res) => {
+router.post("/bets", async (req, res) => {
     if (!req.body) return res.json({ error: "Fälten var inte ifyllda!" });
 
     try {

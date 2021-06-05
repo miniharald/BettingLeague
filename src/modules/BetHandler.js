@@ -8,7 +8,7 @@ export default function BetHandler() {
   async function getBetsByLeagueAndUser(leagueId, userId) {
     let result;
     try {
-      result = await externalFetch(`http://192.168.1.2:8090/api/league/${leagueId}/user/${userId}`);
+      result = await externalFetch(`http://192.168.1.2:8090/api/bets/league/${leagueId}/user/${userId}`);
       
       bets.value = result.bets;
     } catch (error) {
@@ -22,7 +22,7 @@ export default function BetHandler() {
       let result;
   
       try {
-        result = await externalFetch("http://192.168.1.2:8090/api/bets/add", "POST", bet);
+        result = await externalFetch("http://192.168.1.2:8090/api/bets", "POST", bet);
         if (result.error) {
           userError.value = result.error;
           return;
