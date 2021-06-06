@@ -24,7 +24,27 @@ async function getById(filter = {}) {
   );
 }
 
+async function insert(league) {
+  return db.query({
+    sql: `
+    INSERT INTO tbl_tb_bets (
+      id,
+      comp_id,
+      name,
+      creatorId
+    ) VALUES (
+      :leagueId,
+      :compId,
+      :leagueName,
+      :creatorId
+    )
+    `,
+    values: { ...league }
+  });
+}
+
 module.exports = {
+  insert,
   getAll,
   getById
 }
