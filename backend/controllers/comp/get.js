@@ -5,7 +5,7 @@ module.exports = router;
 
 router.get("/comp", async (req, res) => {
     res.json({
-        comp: await comp.getAll()
+        comps: await comp.getAll()
     });
   });
 

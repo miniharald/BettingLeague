@@ -4,7 +4,7 @@ async function getAll() {
     return db.query({
       sql: `
       SELECT *
-      FROM tbl_tb_comps
+      FROM tbl_tb_leagues
       `
     });
   }
@@ -13,8 +13,8 @@ async function getById(filter = {}) {
   return db.query({
     sql: `
     SELECT *
-    FROM tbl_tb_comps
-    WHERE id = :compId
+    FROM tbl_tb_leagues
+    WHERE id = :leagueId
     `,
     values: {
       ...filter
