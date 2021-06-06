@@ -27,7 +27,7 @@ async function getById(filter = {}) {
 async function insert(league) {
   return db.query({
     sql: `
-    INSERT INTO tbl_tb_bets (
+    INSERT INTO tbl_tb_leagues (
       id,
       comp_id,
       name,
@@ -43,8 +43,21 @@ async function insert(league) {
   });
 }
 
+async function update(league) {
+  return db.query({
+    sql: `
+    UPDATE tbl_tb_leagues SET
+    name = :leagueName
+    WHERE id = :id`,
+    values: {
+      ...league
+    }
+  });
+}
+
 module.exports = {
-  insert,
   getAll,
+  insert,
+  update,
   getById
 }
