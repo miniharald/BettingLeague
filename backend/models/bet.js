@@ -16,6 +16,21 @@ async function getAllBy(filter = {}) {
   });
 }
 
+async function getById(filter = {}) {
+  return db.query({
+    sql: `
+    SELECT *
+    FROM tbl_tb_bets
+    WHERE id = :betId
+    `,
+    values: {
+      ...filter
+    }
+  }).then(
+    rows => rows[0]
+  );
+}
+
 async function insert(bet) {
   return db.query({
     sql: `
@@ -37,7 +52,22 @@ async function insert(bet) {
   });
 }
 
+async function update(bet) {
+  return db.query({
+    sql: `
+    UPDATE tbl_tb_bets SET
+    home_result = :homeResult,
+    away_result = :awayResult
+    WHERE id = :id`,
+    values: {
+      ...bet
+    }
+  });
+}
+
 module.exports = {
+  getAllBy,
+  getById,
   insert,
-  getAllBy
+  update
 }

@@ -13,5 +13,5 @@ router.post("/bets", async (req, res) => {
       return res.json({ error: "Något gick snett!" });
     }
 
-    res.json("Bet saved");
+    res.json("Tips sparat!");
 })
