@@ -1,12 +1,21 @@
 const db = require("../db")
 
+async function getAll() {
+  return db.query({
+    sql: `
+    SELECT *
+    FROM tbl_tb_users
+    `
+  });
+}
+
 async function getBy(filter = {}) {
   return db.query({
     sql: `
     SELECT *
     FROM tbl_tb_users
     WHERE 1 = 1
-    ${filter.id ? "AND id = :id" : ""}
+    ${filter.userId ? "AND id = :userId" : ""}
     ${filter.mail ? "AND mail = :mail" : ""}
     ${filter.reset_token ? "AND reset_token = :reset_token" : ""}
     ${filter.reset_token_expiration ? "AND reset_token_expiration = :reset_token_expiration" : ""}
@@ -21,4 +30,5 @@ async function getBy(filter = {}) {
 
 module.exports = {
   getBy,
+  getAll
 }

@@ -5,7 +5,9 @@ router.use("/api", [
     require("./comp"),
     require("./game"),
     require("./team"),
-    require("./login")
+    require("./user"),
+    require("./login"),
+    require("./league")
 ])
 
 module.exports = () => {
