@@ -28,7 +28,17 @@ async function getBy(filter = {}) {
   );
 }
 
+async function deleteUser(user) {
+  return db.query({
+    sql: `
+    DELETE FROM users
+    WHERE id = :id
+    `, values: { ...user }
+  })
+}
+
 module.exports = {
   getBy,
-  getAll
+  getAll,
+  deleteUser
 }
