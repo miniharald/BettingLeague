@@ -54,7 +54,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "../style/_variables";
+  @import "../style/_variables";
+  @import "../style/_button-design";
 
   .games {
     width: 100%;
@@ -88,11 +89,5 @@ export default {
   }
   .p-inputtext {
     width: 50px;
-  }
-
-  .p-button {
-    background: $bg-secondary !important;
-    border: $border !important;
-    margin: $margin-primary !important;
   }
 </style>

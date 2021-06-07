@@ -7,7 +7,10 @@ module.exports = router;
 router.post("/users", async (req, res) => {
     if (!req.body) return res.json({ error: "Fälten var inte ifyllda!" });
 
-    const existingUser = await user.getBy({mail: req.body.mail});
+    let existingUser = await user.getBy({username: req.body.username});
+    if (existingUser) return res.json({ error: "Ifyllt användarnamn används redan!" });
+
+    existingUser = await user.getBy({mail: req.body.mail});
     if (existingUser) return res.json({ error: "Ifylld e-mail används redan!" });
 
     try {

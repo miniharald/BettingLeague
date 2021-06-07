@@ -2,7 +2,7 @@
   <Menu />
   <main>
     <League />
-    <Games />
+    <Register />
   </main>
   
 </template>
@@ -10,12 +10,13 @@
 <script>
 import Menu from './components/Menu.vue'
 import Games from './components/Games.vue'
+import Register from './components/Register.vue'
 import League from './components/submenues/League.vue'
 
 export default {
   name: 'App',
   components: {
-    Games, Menu, League
+    Games, Menu, League, Register
   }
 }
 </script>

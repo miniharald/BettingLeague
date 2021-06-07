@@ -1,0 +1,46 @@
+@import "../style/_variables";
+
+form {
+    display: flex;
+    flex-direction: column;
+    padding: 40px 0;
+    margin-left: auto;
+    margin-right: auto;
+    width: 400px;
+  }
+  .formButtons {
+    display: flex;
+    justify-content: space-evenly;
+  }
+  .p-inputtext {
+    width: 100%;
+    margin-top: $margin-secondary;
+    margin-bottom: $margin-secondary;
+  }
+  .p-component {
+    font-family: $font-primary !important;
+  }
+  .p-error {
+    color: #7a0900 !important;
+  }
+  .p-float-label input:focus ~ label, 
+  .p-float-label input.p-filled ~ label, 
+  .p-float-label textarea:focus ~ label, 
+  .p-float-label textarea.p-filled ~ label, 
+  .p-float-label .p-inputwrapper-focus ~ label, 
+  .p-float-label .p-inputwrapper-filled ~ label {
+    top: 7px;
+    left: 2px;
+    color: $text-primary;
+  }
+  ::v-deep(.p-password input) {
+      width: 25rem;
+      margin-top: $margin-secondary;
+      margin-bottom: $margin-secondary;
+  }
+  
+  @media only screen and (max-height: 414px) {
+    form {
+      padding: 30px 0;
+    }
+  }
