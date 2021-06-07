@@ -1,14 +1,16 @@
 <template>
+  <Menu />
   <Games />
 </template>
 
 <script>
+import Menu from './components/Menu.vue'
 import Games from './components/Games.vue'
 
 export default {
   name: 'App',
   components: {
-    Games
+    Games, Menu
   }
 }
 </script>
