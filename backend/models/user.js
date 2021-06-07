@@ -28,6 +28,25 @@ async function getBy(filter = {}) {
   );
 }
 
+async function insert(user) {
+  return db.query({
+    sql: `
+    INSERT INTO users (
+      first_name,
+      last_name,
+      mail,
+      password,
+    ) VALUES (
+      :firstName,
+      :lastName,
+      :mail,
+      :password
+    )
+    `,
+    values: { ...user }
+  });
+}
+
 async function deleteUser(user) {
   return db.query({
     sql: `
@@ -40,5 +59,6 @@ async function deleteUser(user) {
 module.exports = {
   getBy,
   getAll,
+  insert,
   deleteUser
 }
