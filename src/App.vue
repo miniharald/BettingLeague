@@ -1,16 +1,21 @@
 <template>
   <Menu />
-  <Games />
+  <main>
+    <League />
+    <Games />
+  </main>
+  
 </template>
 
 <script>
 import Menu from './components/Menu.vue'
 import Games from './components/Games.vue'
+import League from './components/submenues/League.vue'
 
 export default {
   name: 'App',
   components: {
-    Games, Menu
+    Games, Menu, League
   }
 }
 </script>
@@ -30,5 +35,8 @@ body {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: $text-primary;
+}
+main {
+  display: flex;
 }
 </style>

@@ -3,5 +3,6 @@ module.exports = {
     comp: require("./comp"),
     game: require("./game"),
     team: require("./team"),
-    user: require("./user")
+    user: require("./user"),
+    league: require("./league")
 }

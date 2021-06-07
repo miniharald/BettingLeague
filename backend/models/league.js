@@ -24,6 +24,19 @@ async function getById(filter = {}) {
   );
 }
 
+async function getByCreatorId(filter = {}) {
+  return db.query({
+    sql: `
+    SELECT *
+    FROM tbl_tb_leagues
+    WHERE creator_id = :creatorId
+    `,
+    values: {
+      ...filter
+    }
+  });
+}
+
 async function insert(league) {
   return db.query({
     sql: `
@@ -59,5 +72,6 @@ module.exports = {
   getAll,
   insert,
   update,
-  getById
+  getById,
+  getByCreatorId
 }

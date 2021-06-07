@@ -13,17 +13,12 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 @import "../style/_variables";
+@import "../style/menu-design";
 
   .desktop {
     display: flex;
     justify-content: center;
-    background-color: $bg-secondary;
-    font-family: $font-secondary;
-    font-size: x-large;
-    span {
-      margin: $margin-primary;
-    }
   }
 </style>

@@ -1,5 +1,5 @@
 <template>
-  <div v-if="state.thereIsGames">
+  <div class="games" v-if="state.thereIsGames">
     <div class="gameRow" v-for="(game, index) in state.games" :key="index">
       <div class="time">
         {{moment(game.start).format("YYYY-MM-DD HH:mm")}}
@@ -53,9 +53,12 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 @import "../style/_variables";
 
+  .games {
+    width: 100%;
+  }
   .gameRow {
     margin-left: auto;
     margin-right: auto;
