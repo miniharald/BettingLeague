@@ -8,7 +8,7 @@ export default function LeagueHandler() {
     async function getLeaguesByCreator(creatorId) {
       let result;
       try {
-        result = await externalFetch(`http://192.168.1.2:8090/api/leagues/creator/${creatorId}`);
+        result = await externalFetch(`http://213.164.198.82:8090/api/leagues/creator/${creatorId}`);
         
         leagues.value = result.leagues;
       } catch (error) {

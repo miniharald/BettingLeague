@@ -41,12 +41,10 @@ async function insert(league) {
   return db.query({
     sql: `
     INSERT INTO tbl_tb_leagues (
-      id,
       comp_id,
       name,
       creatorId
     ) VALUES (
-      :leagueId,
       :compId,
       :leagueName,
       :creatorId
@@ -68,10 +66,30 @@ async function update(league) {
   });
 }
 
+async function addUserToLeague(user) {
+  return db.query({
+    sql: `
+    INSERT INTO tbl_tb_league_users (
+      league_id,
+      user_id,
+      points
+    ) VALUES (
+      :leagueId,
+      :userId,
+      0
+    )
+    `,
+    values: {
+      ...user
+    }
+  });
+}
+
 module.exports = {
   getAll,
   insert,
   update,
   getById,
-  getByCreatorId
+  getByCreatorId,
+  addUserToLeague
 }

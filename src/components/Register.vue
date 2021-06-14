@@ -36,6 +36,7 @@
 
 <script>
 import { reactive } from "vue";
+import PageHandler from '../modules/PageHandler';
 import UserHandler from '../modules/UserHandler';
 
 export default {
@@ -54,6 +55,7 @@ export default {
     });
 
     const { createUser, userError } = UserHandler();
+    const { showGamesPage, showRegisterPage } = PageHandler();
 
     function reset() {
       state.form.username = "";
@@ -69,8 +71,10 @@ export default {
         async function submitForm() {
       if (checkPasswordMatch() && checkPasswordRegex()) {
         await createUser(state.form);
-        if(!userError.value) console.log("KLAR");;
-
+        if(!userError.value) {
+          showRegisterPage.value = false;
+          showGamesPage.value = true;
+        }
       }
     }
 
